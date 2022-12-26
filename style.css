@@ -1,0 +1,9 @@
+:root {
+	--base-primary: #ffffff;
+	--base-secondary: #191818;
+}
+
+
+body {
+	font-family: "Montserrat", sans-serif;
+}
