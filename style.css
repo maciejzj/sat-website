@@ -2,7 +2,7 @@
 	--base-bright: #ffffff;
 	--base-dark: #191818;
 	--border-width: 3px;
-	--content-width: 1000px;
+	--content-width: 850px;
 }
 
 .bold-font {
@@ -84,13 +84,73 @@ body {
 	max-width: 45%;
 }
 
-#hero-header > h1 {
-	font-size: 2em;
-	margin-bottom: 0.5em;
+#hero-header {
+	margin-block: 1.5em 0.5em;
 }
 
-#hero-caption {
-	font-weight: 500;
+#hero-header > h1 {
+	font-size: 2em;
+	display: inline;
+}
+
+#hero-header > img {
+	height: 2em;
+	vertical-align: sub;
+}
+
+.info-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: var(--border-width);
+	padding: 3px;
+	max-width: var(--content-width);
+	margin: auto;
+	background-color: var(--base-bright);
+}
+
+.info-grid > div {
+	aspect-ratio: 1;
+	background-color: var(--base-dark);
+}
+
+.grid-card {
+	display: flex;
+	position: relative;
+	overflow: hidden;
+}
+
+.grid-img-overlay {
+	width: 100%;
+	heigth: 100%;
+	position: absolute;
+	left: 0;
+	transition: 0.5s ease-in-out;
+}
+
+.grid-img-overlay > img {
+	width: 100%;
+	heigth: 100%;
+}
+
+.grid-card:hover .grid-img-overlay {
+	left: 100%;
+	transition: 0.5s ease-in-out;
+}
+
+.grid-underlay {
+	font-size: 0.8em;
+	width: 100%;
+	heigth: 100%;
+	padding: 25px;
+	background-color: var(--base-bright);
+	color: var(--base-dark);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.grid-underlay > a {
+	color: var(--base-dark);
 }
 
 .media-bar {
@@ -131,5 +191,3 @@ body {
 	font-weight: bold;
 	font-size: 1.1em;
 }
-
-
