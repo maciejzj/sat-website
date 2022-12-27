@@ -1,9 +1,135 @@
 :root {
-	--base-primary: #ffffff;
-	--base-secondary: #191818;
+	--base-bright: #ffffff;
+	--base-dark: #191818;
+	--border-width: 3px;
+	--content-width: 1000px;
 }
 
+.bold-font {
+	font-weight: bold;
+}
 
 body {
-	font-family: "Montserrat", sans-serif;
+	font-family: "Avenir", "Montserrat", sans-serif;
+	background-color: var(--base-dark);
+	color: var(--base-bright);
+	font-weight: 500;
+	margin: 0;
 }
+
+#topbar {
+	background-color: var(--base-bright);
+	color: var(--base-dark);
+	padding: 16px 50px;
+}
+
+#topbar-content {
+	max-width: var(--content-width);
+	margin: auto;
+}
+
+#main-container {
+	max-width: var(--content-width);
+	margin: auto;
+	padding-inline: 50px;
+}
+
+#hero {
+	margin-top: 2.5em;
+}
+
+.logo-frame {
+	border: var(--border-width) solid var(--base-bright);
+	display: inline-flex;
+	flex-direction: row;
+	font-weight: bold;
+}
+
+.logo-frame-main {
+	padding: 0.5em 1em;
+	font-size: 1.5em;
+	flex-direction: row;
+	display: flex;
+	align-items: center;
+}
+
+.logo-frame-main > img {
+	padding-right: 1em;
+	height: 4em;
+}
+
+.logo-frame-side {
+	border-left: var(--border-width) solid var(--base-bright);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.logo-frame-side-top {
+	flex: 1;
+	padding: 0.5em 1em;
+	border-bottom: var(--border-width) solid var(--base-bright);
+	display: flex;
+	align-items: center;
+}
+
+.logo-frame-side-bottom {
+	flex: 1;
+	padding: 0.5em 1em;
+	display: flex;
+	align-items: center;
+}
+
+#hero-text {
+	max-width: 45%;
+}
+
+#hero-header > h1 {
+	font-size: 2em;
+	margin-bottom: 0.5em;
+}
+
+#hero-caption {
+	font-weight: 500;
+}
+
+.media-bar {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.media-tile {
+	border-left: var(--border-width) solid var(--base-bright);
+	padding-left: 1em;
+	padding-block: 0.25em;
+	flex-grow: 1;
+	flex-basis: 0;
+}
+
+.media-tile > a {
+	font-family: 'Roboto Mono', monospace;
+	font-weight: bold;
+	font-size: 1.2em;
+	color: var(--base-bright);
+	text-decoration: none;
+}
+
+.media-tile > a:hover {
+	text-decoration: underline;
+}
+
+#footer {
+	color: var(--base-dark);
+	background-color: var(--base-bright);
+	margin-top: 3em;
+	padding: 1em;
+	text-align: center;
+}
+
+.footer-strong {
+	font-weight: bold;
+	font-size: 1.1em;
+}
+
+
