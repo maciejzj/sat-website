@@ -9,7 +9,6 @@
 	font-weight: bold;
 }
 
-
 body {
 	font-family: "Avenir", "Montserrat", sans-serif;
 	background-color: var(--base-dark);
@@ -85,10 +84,6 @@ h2 {
 	align-items: center;
 }
 
-#hero-text {
-	max-width: 45%;
-}
-
 #hero-header {
 	margin-block: 1.5em 0.5em;
 }
@@ -101,6 +96,10 @@ h2 {
 #hero-header > img {
 	height: 2em;
 	vertical-align: sub;
+}
+
+#hero-caption {
+	max-width: 45%;
 }
 
 .info-grid {
@@ -175,7 +174,6 @@ h2 {
 .media-tile > a {
 	font-family: 'Roboto Mono', monospace;
 	font-weight: bold;
-	font-size: 1.2em;
 	color: var(--base-bright);
 	text-decoration: none;
 }
@@ -184,7 +182,7 @@ h2 {
 	text-decoration: underline;
 }
 
-#footer {
+footer {
 	color: var(--base-dark);
 	background-color: var(--base-bright);
 	margin-top: 3em;
