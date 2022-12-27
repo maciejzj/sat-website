@@ -9,12 +9,17 @@
 	font-weight: bold;
 }
 
+
 body {
 	font-family: "Avenir", "Montserrat", sans-serif;
 	background-color: var(--base-dark);
 	color: var(--base-bright);
 	font-weight: 500;
 	margin: 0;
+}
+
+h2 {
+	margin-block: 1.5em;
 }
 
 #topbar {
@@ -183,7 +188,7 @@ body {
 	color: var(--base-dark);
 	background-color: var(--base-bright);
 	margin-top: 3em;
-	padding: 1em;
+	padding: 1.5em;
 	text-align: center;
 }
 
