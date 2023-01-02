@@ -115,7 +115,6 @@ h2 {
 	max-width: var(--content-width);
 	margin: auto;
 	background-color: var(--base-bright);
-	overflow: scroll;
 	min-width: 800px;
 }
 
