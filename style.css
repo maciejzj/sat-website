@@ -84,6 +84,11 @@ h2 {
 	align-items: center;
 }
 
+
+#hero {
+	max-width: 45%;
+}
+
 #hero-header {
 	margin-block: 1.5em 0.5em;
 }
@@ -98,8 +103,11 @@ h2 {
 	vertical-align: sub;
 }
 
-#hero-caption {
-	max-width: 45%;
+/* #hero-caption { */
+/* } */
+
+.grid-container {
+	overflow: scroll;
 }
 
 .info-grid {
@@ -110,6 +118,8 @@ h2 {
 	max-width: var(--content-width);
 	margin: auto;
 	background-color: var(--base-bright);
+	overflow: scroll;
+	min-width: 800px;
 }
 
 .info-grid > div {
@@ -158,9 +168,10 @@ h2 {
 }
 
 .media-bar {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+	gap: 1em;
+	display: grid;
+	grid-auto-rows: 1fr;
+	grid-template-columns: repeat(4, 1fr);
 }
 
 .media-tile {
@@ -193,4 +204,40 @@ footer {
 .footer-strong {
 	font-weight: bold;
 	font-size: 1.1em;
+}
+
+@media (max-width: 767px) {
+
+#topbar {
+	padding-inline: 25px;
+}
+
+#main-container {
+	padding-inline: 25px;
+}
+
+.logo-frame-main {
+	font-size: 1em;
+}
+
+.logo-frame-side {
+	font-size: 0.7em;
+}
+
+#hero {
+	max-width: 95%;
+}
+
+.media-bar {
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.media-tile {
+	font-size: 1em;
+}
+
+.grid-underlay {
+	padding: 20px;
+}
+
 }
