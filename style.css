@@ -104,7 +104,7 @@ h2 {
 }
 
 .grid-container {
-	overflow: scroll;
+	overflow: auto;
 }
 
 .info-grid {
