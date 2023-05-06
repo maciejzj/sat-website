@@ -146,6 +146,7 @@ h2 {
 	position: absolute;
 	top: calc(50% - 1em);
 	right: -1em;
+	opacity: 0;
 }
 
 .scroll-arrow-right:after {

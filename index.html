@@ -189,12 +189,11 @@
           let gridContainer = horizonatalScrollContainer.querySelector('.grid-container')
           let leftArrow = horizonatalScrollContainer.querySelector('.scroll-arrow-left');
           let rightArrow = horizonatalScrollContainer.querySelector('.scroll-arrow-right');
-          gridContainer.addEventListener(
-            'scroll', 
-            function() {
-              updateScrollArrowHints(gridContainer, leftArrow, rightArrow);
-            }
-          )
+          scrollUpdateHandle = function() {
+            updateScrollArrowHints(gridContainer, leftArrow, rightArrow);
+          }
+          scrollUpdateHandle();
+          gridContainer.addEventListener('scroll', scrollUpdateHandle);
         </script>
   </body>
 </html>
