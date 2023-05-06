@@ -47,70 +47,76 @@
 
       <section class=projects>
         <h2>Nasze projekty</h2>
-        <div class=grid-container>
-          <div class=info-grid>
-            <div class=grid-card>
-              <div class=grid-img-overlay>
-                <img src="media/sat_picktogram_balloon.png"></img>
+        <div class=horizontal-scroll-container>
+
+          <div class="scroll-arrow scroll-arrow-left" id=left-arrow></div>
+          <div class="scroll-arrow scroll-arrow-right" id=right-arrow></div>
+
+          <div class=grid-container>
+            <div class=info-grid>
+              <div class=grid-card>
+                <div class=grid-img-overlay>
+                  <img src="media/sat_picktogram_balloon.png"></img>
+                </div>
+                <div class=grid-underlay>
+                  Prowadzimy misje balonów stratosferycznych z własnymi
+                  konstrukcjami mechanicznymi i elektronicznymi na pokładzie.
+                  <a href="">Nasze misje &#8594</a>
+                </div>
               </div>
-              <div class=grid-underlay>
-                Prowadzimy misje balonów stratosferycznych z własnymi
-                konstrukcjami mechanicznymi i elektronicznymi na pokładzie.
-                <a href="">Nasze misje &#8594</a>
+              <div></div>
+              <div class=grid-card>
+                <div class=grid-img-overlay>
+                  <img src="media/sat_picktogram_planet.png"></img>
+                </div>
+                <div class=grid-underlay>
+                  Planujemy misje i eksperymenty fizyczne w kosmosie.
+                  <a href="">Nasze eksperyment detekcji mionów &#8594</a>
+                </div>
               </div>
+              <div></div>
+              <div></div>
+              <div class=grid-card>
+                <div class=grid-img-overlay>
+                  <img src="media/sat_picktogram_antenna.png"></img>
+                </div>
+                <div class=grid-underlay>
+                  Konstruujemy systemy komunikacji satelitarnej oraz
+                  oprogramowanie kontroli misji.
+                  <a href="">Nasza stacja radiowa standardzie GCS &#8594</a>
+                </div>
+              </div>
+              <div></div>
+              <div class=grid-card>
+                <div class=grid-img-overlay>
+                  <img src="media/sat_picktogram_cpu.png"></img>
+                </div>
+                <div class=grid-underlay>
+                  Projektujemy komponenty elektroniczne, układy PCB i
+                  oprogramowanie embedded dla urządzeń kosmicznych.
+                </div>
+              </div>
+              <div class=grid-card>
+                <div class=grid-img-overlay>
+                  <img src="media/sat_picktogram_rocket.png"></img>
+                </div>
+                <div class=grid-underlay>
+                  Konstruujemy rakiety oraz hamowanie rakietowe.
+                </div>
+              </div>
+              <div></div>
+              <div class=grid-card>
+                <div class=grid-img-overlay>
+                  <img src="media/sat_picktogram_satellite.png"></img>
+                </div>
+                <div class=grid-underlay>
+                  Budujemy moduły elektroniczne w standardzie CubeSat takie jak
+                  EPS. W dalekiej przyszłości nasze moduły mogą służyć do budowy
+                  satelity!
+                </div>
+              </div>
+              <div></div>
             </div>
-            <div></div>
-            <div class=grid-card>
-              <div class=grid-img-overlay>
-                <img src="media/sat_picktogram_planet.png"></img>
-              </div>
-              <div class=grid-underlay>
-                Planujemy misje i eksperymenty fizyczne w kosmosie.
-                <a href="">Nasze eksperyment detekcji mionów &#8594</a>
-              </div>
-            </div>
-            <div></div>
-            <div></div>
-            <div class=grid-card>
-              <div class=grid-img-overlay>
-                <img src="media/sat_picktogram_antenna.png"></img>
-              </div>
-              <div class=grid-underlay>
-                Konstruujemy systemy komunikacji satelitarnej oraz
-                oprogramowanie kontroli misji.
-                <a href="">Nasza stacja radiowa standardzie GCS &#8594</a>
-              </div>
-            </div>
-            <div></div>
-            <div class=grid-card>
-              <div class=grid-img-overlay>
-                <img src="media/sat_picktogram_cpu.png"></img>
-              </div>
-              <div class=grid-underlay>
-                Projektujemy komponenty elektroniczne, układy PCB i
-                oprogramowanie embedded dla urządzeń kosmicznych.
-              </div>
-            </div>
-            <div class=grid-card>
-              <div class=grid-img-overlay>
-                <img src="media/sat_picktogram_rocket.png"></img>
-              </div>
-              <div class=grid-underlay>
-                Konstruujemy rakiety oraz hamowanie rakietowe.
-              </div>
-            </div>
-            <div></div>
-            <div class=grid-card>
-              <div class=grid-img-overlay>
-                <img src="media/sat_picktogram_satellite.png"></img>
-              </div>
-              <div class=grid-underlay>
-                Budujemy moduły elektroniczne w standardzie CubeSat takie jak
-                EPS. W dalekiej przyszłości nasze moduły mogą służyć do budowy
-                satelity!
-              </div>
-            </div>
-            <div></div>
           </div>
       </section>
 
@@ -133,11 +139,62 @@
           <div class=media-tile></a><a href="">Stanisława Konarskiego 22b<br>41-100 Gliwice</a></div>
         </div>
       </section>
-    </div>
+        </div>
 
-    <footer>
-      <span class="footer-strong">Silesian Aerospace Technologies</span><br>
-      Politechnika Śląska w Gliwicach
-    </footer>
+        <footer>
+          <span class="footer-strong">Silesian Aerospace Technologies</span><br>
+          Politechnika Śląska w Gliwicach
+        </footer>
+
+        <script>
+          function isHorizontallyOverflown(element) {
+            return element.scrollWidth > element.clientWidth;
+          }
+
+          function isNotScrolled(element) {
+            return element.scrollLeft === 0;
+          }
+
+          function isMaxScrolled(element) {
+            return element.scrollLeft === (element.scrollWidth - element.clientWidth);
+          }
+
+          function show(element) {
+            element.style.opacity = "1";
+          }
+
+          function hide(element) {
+            element.style.opacity = "0";
+          }
+
+          function updateScrollArrowHints(scrollableElement, leftArrow, rightArrow) {
+            if (isHorizontallyOverflown(scrollableElement)) {
+              if (isNotScrolled(scrollableElement)) {
+                hide(leftArrow);
+                show(rightArrow);
+              } else if (isMaxScrolled(scrollableElement)) {
+                show(leftArrow);
+                hide(rightArrow);
+              } else {
+                hide(leftArrow);
+                hide(rightArrow);
+              }
+            } else {
+              hide(leftArrow);
+              hide(rightArrow);
+            }
+          }
+
+          let horizonatalScrollContainer = document.querySelector('.horizontal-scroll-container');
+          let gridContainer = horizonatalScrollContainer.querySelector('.grid-container')
+          let leftArrow = horizonatalScrollContainer.querySelector('.scroll-arrow-left');
+          let rightArrow = horizonatalScrollContainer.querySelector('.scroll-arrow-right');
+          gridContainer.addEventListener(
+            'scroll', 
+            function() {
+              updateScrollArrowHints(gridContainer, leftArrow, rightArrow);
+            }
+          )
+        </script>
   </body>
 </html>

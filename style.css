@@ -84,7 +84,6 @@ h2 {
 	align-items: center;
 }
 
-
 .hero {
 	max-width: 45%;
 }
@@ -101,6 +100,59 @@ h2 {
 .hero-header > img {
 	height: 2em;
 	vertical-align: sub;
+}
+
+.horizontal-scroll-container {
+	position: relative;
+}
+
+.scroll-arrow {
+	display: inline-block;
+	z-index: 1;
+	width: 2em;
+	height: 2em;
+	border-radius: 50%;
+	background-color: rgba(255, 255, 255, 0.5);
+	backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+	transition: opacity 0.3s ease;
+}
+
+.scroll-arrow:after {
+	content: '';
+	display: inline-block;
+	margin-top: 0.525em;
+	width: 0.7em;
+	height: 0.7em;
+	border-top: 0.25em solid var(--base-dark);
+	border-right: 0.25em solid var(--base-dark);
+}
+
+.scroll-arrow-left {
+	position: absolute;
+	top: calc(50% - 1em);
+	left: -1em;
+	opacity: 0;
+}
+
+.scroll-arrow-left:after {
+	margin-left: 0.65em;
+	-moz-transform: rotate(-135deg);
+	-webkit-transform: rotate(-135deg);
+	transform: rotate(-135deg);
+}
+
+.scroll-arrow-right {
+	position: absolute;
+	top: calc(50% - 1em);
+	right: -1em;
+}
+
+.scroll-arrow-right:after {
+	margin-left: 0.35em;
+	-moz-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
 }
 
 .grid-container {
