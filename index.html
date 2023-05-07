@@ -148,16 +148,16 @@
         </footer>
 
         <script>
-          function isHorizontallyOverflown(element) {
-            return element.scrollWidth > element.clientWidth;
+          function isHorizontallyOverflown(element, tolarance) {
+            return element.scrollWidth > element.clientWidth + tolarance;
           }
 
-          function isNotScrolled(element) {
-            return element.scrollLeft === 0;
+          function isNotHorizontallyScrolled(element) {
+            return element.scrollLeft <= 0;
           }
 
-          function isMaxScrolled(element) {
-            return element.scrollLeft === (element.scrollWidth - element.clientWidth);
+          function isMaxHorizontallyScrolled(element) {
+            return element.scrollLeft >= (element.scrollWidth - element.clientWidth);
           }
 
           function show(element) {
@@ -169,16 +169,16 @@
           }
 
           function updateScrollArrowHints(scrollableElement, leftArrow, rightArrow) {
-            if (isHorizontallyOverflown(scrollableElement)) {
-              if (isNotScrolled(scrollableElement)) {
+            if (isHorizontallyOverflown(scrollableElement, 1)) {
+              if (isNotHorizontallyScrolled(scrollableElement)) {
                 hide(leftArrow);
                 show(rightArrow);
-              } else if (isMaxScrolled(scrollableElement)) {
+              } else if (isMaxHorizontallyScrolled(scrollableElement)) {
                 show(leftArrow);
                 hide(rightArrow);
               } else {
-                hide(leftArrow);
-                hide(rightArrow);
+                show(leftArrow);
+                show(rightArrow);
               }
             } else {
               hide(leftArrow);
@@ -193,8 +193,11 @@
           scrollUpdateHandle = function() {
             updateScrollArrowHints(gridContainer, leftArrow, rightArrow);
           }
-          scrollUpdateHandle();
+
           gridContainer.addEventListener('scroll', scrollUpdateHandle);
+          window.addEventListener("resize", scrollUpdateHandle);
+
+          scrollUpdateHandle();
         </script>
   </body>
 </html>
