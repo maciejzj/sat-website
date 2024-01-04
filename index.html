@@ -15,7 +15,7 @@
 </head>
 
 <body>
-  <div class=topbar>
+  <div class="topbar topbar-solid">
     <div class=topbar-content>
       Studenckie Koło Naukowe <span class="bold-font">SAT</span>
     </div>
@@ -155,6 +155,25 @@
   </footer>
 
   <script>
+    // Make topbar transparent on scroll
+
+    let topbar = document.querySelector(".topbar")
+    function updateTopbarStyle() {
+      console.log(window.scrollY)
+      if (window.scrollY >= 50) {
+        topbar.classList.add("topbar-transparent");
+        topbar.classList.remove("topbar-solid");
+      } else {
+        topbar.classList.add("topbar-solid");
+        topbar.classList.remove("topbar-transparent");
+      }
+    }
+
+    window.addEventListener("scroll", updateTopbarStyle)
+    window.addEventListener("load", updateTopbarStyle)
+
+    // Show or hide scroll arrow hints for grid
+
     function isHorizontallyOverflown(element, tolarance) {
       return element.scrollWidth > element.clientWidth + tolarance;
     }
@@ -193,18 +212,17 @@
       }
     }
 
-    let horizonatalScrollContainer = document.querySelector('.horizontal-scroll-container');
-    let gridContainer = horizonatalScrollContainer.querySelector('.grid-container')
-    let leftArrow = horizonatalScrollContainer.querySelector('.scroll-arrow-left');
-    let rightArrow = horizonatalScrollContainer.querySelector('.scroll-arrow-right');
+    let horizonatalScrollContainer = document.querySelector(".horizontal-scroll-container");
+    let gridContainer = horizonatalScrollContainer.querySelector(".grid-container")
+    let leftArrow = horizonatalScrollContainer.querySelector(".scroll-arrow-left");
+    let rightArrow = horizonatalScrollContainer.querySelector(".scroll-arrow-right");
     scrollUpdateHandle = function () {
       updateScrollArrowHints(gridContainer, leftArrow, rightArrow);
     }
 
-    gridContainer.addEventListener('scroll', scrollUpdateHandle);
+    gridContainer.addEventListener("scroll", scrollUpdateHandle);
     window.addEventListener("resize", scrollUpdateHandle);
-
-    scrollUpdateHandle();
+    window.addEventListener("load", scrollUpdateHandle);
   </script>
 </body>
 
