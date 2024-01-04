@@ -59,7 +59,7 @@ main {
 .main-container {
 	max-width: var(--content-width);
 	margin: auto;
-	padding: 2.5em 0;
+	padding: 2.5em 50px;
 }
 
 .hero {
