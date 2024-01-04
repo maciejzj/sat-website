@@ -27,7 +27,7 @@ h2 {
 	transition: .3s all;
 	-webkit-transition: .3s all;
 	width: 100%;
-	padding: 1em 0;
+	padding: 1em 0px;
 }
 
 .topbar-solid {
@@ -45,6 +45,7 @@ h2 {
 .topbar-content {
 	max-width: var(--content-width);
 	margin: auto;
+	padding-inline: 50px;
 }
 
 .topbar + main {
@@ -59,7 +60,8 @@ main {
 .main-container {
 	max-width: var(--content-width);
 	margin: auto;
-	padding: 2.5em 50px;
+	padding: 2.5em 0px;
+	padding-inline: 50px;
 }
 
 .hero {
@@ -274,7 +276,7 @@ footer {
 
 @media (max-width: 767px) {
 
-.topbar {
+.topbar-content {
 	padding-inline: 25px;
 }
 
