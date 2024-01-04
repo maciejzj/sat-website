@@ -11,8 +11,7 @@
 
 body {
 	font-family: "Avenir", "Montserrat", sans-serif;
-	background-color: var(--base-dark);
-	color: var(--base-bright);
+	background-color: var(--base-bright);
 	font-weight: 500;
 	margin: 0;
 }
@@ -22,9 +21,14 @@ h2 {
 }
 
 .topbar {
+	position: fixed;
+	top: 0;
+	z-index: 2;
+	width: 100%;
+	border-bottom: 1px solid var(--base-dark);
+	padding: 1em 0;
 	background-color: var(--base-bright);
 	color: var(--base-dark);
-	padding: 16px 50px;
 }
 
 .topbar-content {
@@ -32,14 +36,23 @@ h2 {
 	margin: auto;
 }
 
+.topbar + main {
+	padding-top: 3.5em;	
+}
+
+main {
+	background-color: var(--base-dark);
+	color: var(--base-bright);
+}
+
 .main-container {
 	max-width: var(--content-width);
 	margin: auto;
-	padding-inline: 50px;
+	padding: 2.5em 0;
 }
 
 .hero {
-	margin-top: 2.5em;
+	max-width: 45%;
 }
 
 .logo-frame {
@@ -82,10 +95,6 @@ h2 {
 	padding: 0.5em 1em;
 	display: flex;
 	align-items: center;
-}
-
-.hero {
-	max-width: 45%;
 }
 
 .hero-header {
@@ -243,7 +252,6 @@ h2 {
 footer {
 	color: var(--base-dark);
 	background-color: var(--base-bright);
-	margin-top: 3em;
 	padding: 1.5em;
 	text-align: center;
 }

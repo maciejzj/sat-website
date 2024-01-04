@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sielsian Aerospace Technologies</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="media/favicon-32x32.png" type="image/png">
-  </head>
-  <body>
-    <div class=topbar>
-      <div class=topbar-content>
-        Studenckie Koło Naukowe <span class="bold-font">SAT</span>
-      </div>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sielsian Aerospace Technologies</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="media/favicon-32x32.png" type="image/png">
+</head>
+
+<body>
+  <div class=topbar>
+    <div class=topbar-content>
+      Studenckie Koło Naukowe <span class="bold-font">SAT</span>
     </div>
+  </div>
+
+  <main>
     <div class=main-container>
 
       <section class=hero>
@@ -24,7 +30,7 @@
           <div class=logo-frame>
             <div class=logo-frame-main>
               <img src="media/sat_symbol_inv.png"></img>
-              Silesian<br>Aerospace<br>Technologies 
+              Silesian<br>Aerospace<br>Technologies
             </div>
             <div class=logo-frame-side>
               <div class=logo-frame-side-top>Politechnika<br>Śląska</div>
@@ -121,7 +127,7 @@
           </div>
       </section>
 
-      <section class=contact-media> 
+      <section class=contact-media>
         <h2>Śledź nas na social media</h2>
         <div class=media-bar>
           <div class=media-tile><a href="">Polub<br>nas na<br>Facebooku</a></div>
@@ -140,64 +146,66 @@
           <div class=media-tile></a><a href="">Stanisława Konarskiego 22b<br>41-100 Gliwice</a></div>
         </div>
       </section>
-        </div>
+    </div>
+  </main>
 
-        <footer>
-          <span class="footer-strong">Silesian Aerospace Technologies</span><br>
-          Politechnika Śląska w Gliwicach
-        </footer>
+  <footer>
+    <span class="footer-strong">Silesian Aerospace Technologies</span><br>
+    Politechnika Śląska w Gliwicach
+  </footer>
 
-        <script>
-          function isHorizontallyOverflown(element, tolarance) {
-            return element.scrollWidth > element.clientWidth + tolarance;
-          }
+  <script>
+    function isHorizontallyOverflown(element, tolarance) {
+      return element.scrollWidth > element.clientWidth + tolarance;
+    }
 
-          function isNotHorizontallyScrolled(element) {
-            return element.scrollLeft <= 0;
-          }
+    function isNotHorizontallyScrolled(element) {
+      return element.scrollLeft <= 0;
+    }
 
-          function isMaxHorizontallyScrolled(element) {
-            return element.scrollLeft >= (element.scrollWidth - element.clientWidth);
-          }
+    function isMaxHorizontallyScrolled(element) {
+      return element.scrollLeft >= (element.scrollWidth - element.clientWidth);
+    }
 
-          function show(element) {
-            element.style.opacity = "1";
-          }
+    function show(element) {
+      element.style.opacity = "1";
+    }
 
-          function hide(element) {
-            element.style.opacity = "0";
-          }
+    function hide(element) {
+      element.style.opacity = "0";
+    }
 
-          function updateScrollArrowHints(scrollableElement, leftArrow, rightArrow) {
-            if (isHorizontallyOverflown(scrollableElement, 1)) {
-              if (isNotHorizontallyScrolled(scrollableElement)) {
-                hide(leftArrow);
-                show(rightArrow);
-              } else if (isMaxHorizontallyScrolled(scrollableElement)) {
-                show(leftArrow);
-                hide(rightArrow);
-              } else {
-                hide(leftArrow);
-                hide(rightArrow);
-              }
-            } else {
-              hide(leftArrow);
-              hide(rightArrow);
-            }
-          }
+    function updateScrollArrowHints(scrollableElement, leftArrow, rightArrow) {
+      if (isHorizontallyOverflown(scrollableElement, 1)) {
+        if (isNotHorizontallyScrolled(scrollableElement)) {
+          hide(leftArrow);
+          show(rightArrow);
+        } else if (isMaxHorizontallyScrolled(scrollableElement)) {
+          show(leftArrow);
+          hide(rightArrow);
+        } else {
+          hide(leftArrow);
+          hide(rightArrow);
+        }
+      } else {
+        hide(leftArrow);
+        hide(rightArrow);
+      }
+    }
 
-          let horizonatalScrollContainer = document.querySelector('.horizontal-scroll-container');
-          let gridContainer = horizonatalScrollContainer.querySelector('.grid-container')
-          let leftArrow = horizonatalScrollContainer.querySelector('.scroll-arrow-left');
-          let rightArrow = horizonatalScrollContainer.querySelector('.scroll-arrow-right');
-          scrollUpdateHandle = function() {
-            updateScrollArrowHints(gridContainer, leftArrow, rightArrow);
-          }
+    let horizonatalScrollContainer = document.querySelector('.horizontal-scroll-container');
+    let gridContainer = horizonatalScrollContainer.querySelector('.grid-container')
+    let leftArrow = horizonatalScrollContainer.querySelector('.scroll-arrow-left');
+    let rightArrow = horizonatalScrollContainer.querySelector('.scroll-arrow-right');
+    scrollUpdateHandle = function () {
+      updateScrollArrowHints(gridContainer, leftArrow, rightArrow);
+    }
 
-          gridContainer.addEventListener('scroll', scrollUpdateHandle);
-          window.addEventListener("resize", scrollUpdateHandle);
+    gridContainer.addEventListener('scroll', scrollUpdateHandle);
+    window.addEventListener("resize", scrollUpdateHandle);
 
-          scrollUpdateHandle();
-        </script>
-  </body>
+    scrollUpdateHandle();
+  </script>
+</body>
+
 </html>
