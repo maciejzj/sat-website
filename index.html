@@ -216,7 +216,8 @@
     let gridContainer = horizonatalScrollContainer.querySelector(".grid-container")
     let leftArrow = horizonatalScrollContainer.querySelector(".scroll-arrow-left");
     let rightArrow = horizonatalScrollContainer.querySelector(".scroll-arrow-right");
-    scrollUpdateHandle = function () {
+
+    function scrollUpdateHandle() {
       updateScrollArrowHints(gridContainer, leftArrow, rightArrow);
     }
 
